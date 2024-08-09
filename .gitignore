@@ -1,0 +1,8 @@
+# Base de daros
+volumes/
+
+# Ambiente virtual
+vdb_env/
+
+# Archivos de data
+**/dummy_data/
