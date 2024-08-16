@@ -6,3 +6,4 @@ vdb_env/
 
 # Archivos de data
 **/dummy_data/
+*.csv
