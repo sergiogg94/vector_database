@@ -60,9 +60,25 @@ cat_field = FieldSchema(
     description = 'Categoria del producto'
 )
 
+# URL
+url_field = FieldSchema(
+    name = 'url',
+    dtype = DataType.VARCHAR,
+    max_length = 200,
+    description = 'URL del producto'
+)
+
+# Precio
+price_field = FieldSchema(
+    name = 'price',
+    dtype = DataType.FLOAT,
+    description = 'Precio del producto'
+)
+
 ## Definir el esquema de la colección
 schema = CollectionSchema(
-    fields = [sku_field,vector_field,desc_field,comp_field,cat_field],
+    fields = [sku_field,vector_field,desc_field,comp_field,
+                cat_field,url_field,price_field],
     description = 'Vectores de descipciones de productos vendidos online'
 )
 
@@ -72,8 +88,6 @@ index_params = {
     'metric_type': 'COSINE', # Similitud coseno
     'params': {'nlist':128} # Parametros para FAISS
 }
-
-# TO DO: Agregar el indice a la colección en el try.
 
 
 try:
